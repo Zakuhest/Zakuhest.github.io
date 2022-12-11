@@ -1,0 +1,351 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="{% url 'index' %}" class="navbar-brand">PortfolioDev</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="#home" class="nav-item nav-link active font-weight-bold">Home</a>
+                        <a href="#about" class="nav-item nav-link">Sobre Mí</a>
+                        <a href="#service" class="nav-item nav-link">Servicios</a>
+                        <a href="#experience" class="nav-item nav-link">Experiencia</a>
+                        <a href="#motivation" class="nav-item nav-link">Motivación</a>
+                        <a href="#projects" class="nav-item nav-link">Proyectos</a>
+                        <a href="#contact" class="nav-item nav-link">Contacto</a>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-btn">
+                {% if request.user.is_authenticated %}
+                        <a class="font-weight-bold text-dark"><strong>| Usuario: </strong>{{ request.user.username }} <strong>|</strong> </a>  
+                        <a class="btn" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                <a class="btn" href="{% url 'login' %}">Login</a>
+                {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+        <!-- Hero Start -->
+        <div class="hero" id="home">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <p>Soy,</p>
+                                <h1>Cristian Diaz</h1>
+                                <h2></h2>
+                                <div class="typed-text">Systems Engineer, Web Development, Web Design, Database Development</div>
+                            </div>
+                            <div class="hero-btn">
+                                <a class="btn" href="{% url 'email' %}">Contáctame</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 d-none d-md-block">
+                        <div class="hero-image">
+                            <img src="{% static 'img/hero.png' %}" alt="Hero Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+
+        <!-- About Start -->
+        <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about" style="margin-top: 10px;">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-img">
+                            <img src="{% static 'img/about.webp' %}" alt="Image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <div class="section-header text-left">
+                                <p>Sobre Mí</p>
+                                <h2>Descripción</h2>
+                            </div>
+                            <div class="about-text">
+                                <p>
+                                    Egresado de Ingeniería de Sistemas y Programador Junior, enfocado en escribir código limpio, elegante y eficiente, con una pasión por el desarrollo de software, diseño y experiencias usuario funcionales.
+                                </p>
+                            </div>
+                            <div class="skills">
+                                <div class="skill-name">
+                                    <p>Systems Engineer</p><p>100%</p>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="skill-name">
+                                    <p>Web Development</p><p>65%</p>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="skill-name">
+                                    <p>Web Design</p><p>60%</p>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="skill-name">
+                                    <p>Database Development</p><p>70%</p>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+        
+        
+        <!-- Service Start -->
+        <div class="service" id="service">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>¿Qué hago?</p>
+                    <h2>Servicios de Calidad</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fa fa-laptop"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Engineer Systems</h3>
+                                <p>
+                                    Monitoreo y desarrollo de sistemas en una variedad de campos, como software, desarrollo de productos, fabricación, transporte, entre muchos más.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fa fa-laptop-code"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Web Development</h3>
+                                <p>
+                                    Desarrollo y mantenimiento de sitios web. Conocimiento en: JavaScript, Python, JSP, PHP, MySQL, MongoDB, Django, Flask.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fa fa-laptop-code"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Web Design</h3>
+                                <p>
+                                    Diseño y planificación de sitios web. Conocimiento en: HTML, CSS, Bootstrap, JavaScript.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="service-text">
+                                <h3>Database Development</h3>
+                                <p>
+                                    Diseño, prueba y funcionamiento de bases de datos aplicando conocimiento de sistemas de gestión de bases de datos, protección y seguridad de datos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+        
+        
+        <!-- Experience Start -->
+        <div class="experience" id="experience">
+            <div class="container">
+                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>Tiempo de Experiencia</p>
+                    <h2>Experiencia</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                            <div class="timeline-date">2016 - 2021</div>
+                            <h2>Engineer Systems</h2>
+                            <h4>UNPRG, Lambayeque, PE</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item right wow slideInLeft" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                            <div class="timeline-date">2019 - 2020</div>
+                            <h2>Microsoft Office Specialist</h2>
+                            <h4>CETI, Chiclayo, PE</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item left wow slideInRight" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                            <div class="timeline-date">2021 - 2022</div>
+                            <h2>English Level B2</h2>
+                            <h4>EPIS - UNPRG, Lambayeque, PE</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                            <div class="timeline-date">2022 - 2023</div>
+                            <h2>Web Developer</h2>
+                            <h4>Bootcamp MTPE, PE</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                            <div class="timeline-date">2022 - 2023</div>
+                            <h2>Web Designer</h2>
+                            <h4>Bootcamp MTPE, PE</h4>
+                        </div>
+                    </div>
+                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+                        <div class="timeline-text">
+                            <div class="timeline-date">2022 - 2023</div>
+                            <h2>Database Developer</h2>
+                            <h4>Bootcamp MTPE, PE</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Job Experience End -->
+        
+        <!-- Banner Start -->
+        <div class="banner wow zoomIn" data-wow-delay="0.1s" id="motivation">
+                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>Cita Célebre</p>
+                    <h2>Motivación</h2>
+                </header>
+                <div class="container banner-text">
+                    <p>
+                        <em>
+                        "La función de un buen software es hacer que lo complejo aparente ser simple"
+                        </em>
+                    </p>
+                    <p>
+                        <em>
+                        -- Grady Booch --
+                        </em>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Banner End -->
+
+
+        <!-- Portfolio Start -->
+        <div class="portfolio" id="projects">
+            <div class="container">
+                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                    <p>Mis Proyectos del Portfolio</p>
+                    <h2>Mis Proyectos</h2>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul id="portfolio-filter">
+                            <li data-filter="*" class="filter-active">All</li>
+                            {% for tag in tags %}
+                            <li data-filter=".filter-{{ tag.id }}">{{ tag }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="row portfolio-container">
+                    {% for project in page_obj %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-{{ project.tags_id }} wow fadeInUp" data-wow-delay="0.0s">
+                        <div class="portfolio-wrap">
+                            <div class="portfolio-img" style="border-radius: 50px;">
+                                <img src="{{ project.url_foto }}" alt="Image" style="height: 200px;">
+                                <!-- <img src="{% static 'img/portfolio-1.jpg' %}" alt="Image"> -->
+                            </div>
+                            <div class="portfolio-text">
+                                <h3>{{ project.proyecto }}</h3>
+                                <a class="btn" href="{% url 'detailsOne' id=project.id %}" style="font-size: 15px;">Ver</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="section-header text-center wow fadeInUp filter-*" data-wow-delay="0.0s" >
+                        {% if request.user.is_authenticated and request.user.is_superuser %}
+                        <a class="btn" href="{% url 'registerProject' %}">Añadir Proyecto</a>
+                        {% endif %}
+                        <div class="pagination" style="display: flex; justify-content: center;">
+                            <span class="step-links">
+                            <br>
+                                <div class="container">
+                                <span class="current">
+                                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+                                </span>
+                                </div>
+                                <br>
+                                {% if page_obj.has_previous %}
+                                <a href="?page=1&&?#projects" class="btn">&laquo;Primero</a>
+                                <a href="?page={{ page_obj.previous_page_number }}&&?#projects" class="btn">&laquo;</a>
+                                {% endif %}
+                                {% if page_obj.has_next %}
+                                    <a href="?page={{ page_obj.next_page_number }}&&?#projects" class="btn">&raquo;</a>
+                                    <a href="?page={{ page_obj.paginator.num_pages }}&&?#projects" class="btn"> Último &raquo;</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Footer Start -->
+        <div class="footer wow fadeIn" data-wow-delay="0.3s" id="contact">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="footer-info">
+                        <h2>Cristian Diaz</h2>
+                        <h3>Chiclayo - Perú</h3>
+                        <div class="footer-menu">
+                            <p>+51 924611572</p>
+                            <p>crisdic5@gmail.com</p>
+                        </div>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/cr.d.dc1/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/cris.dc0.0/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/cristiandiazcap/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/Zakuhest"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container copyright">
+                    <p>&copy; <a href="{% url 'index' %}">PortfolioDev</a>, All Right Reserved</p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+{% endblock %}

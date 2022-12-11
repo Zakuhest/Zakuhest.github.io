@@ -1,0 +1,30 @@
+[
+    {
+      "model": "proyecto.tags",
+      "pk": 1,
+      "fields": {
+        "nombre": "Flask"
+      }
+    },
+    {
+      "model": "proyecto.tags",
+      "pk": 2,
+      "fields": {
+        "nombre": "Django"
+      }
+    },
+    {
+      "model": "proyecto.tags",
+      "pk": 3,
+      "fields": {
+        "nombre": "Python"
+      }
+    },
+    {
+      "model": "proyecto.tags",
+      "pk": 4,
+      "fields": {
+        "nombre": "JavaScript"
+      }
+    }
+]
